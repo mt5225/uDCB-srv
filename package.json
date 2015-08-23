@@ -1,0 +1,36 @@
+{
+  "name": "uDCB-srv",
+  "description": "uDCB Backend",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Qing Jiang",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mt5225/uDCB-srv"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.4.x"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1.46",
+    "body-parser": "1.0.x",
+    "coffee-script": "1.7.x",
+    "compression": "1.0.x",
+    "connect-mongo": "0.4.x",
+    "connect-multiparty": "1.0.x",
+    "cookie-parser": "1.0.x",
+    "errorhandler": "1.0.x",
+    "express": "4.0.x",
+    "express-session": "1.0.x",
+    "helmet": "0.2.x",
+    "lodash": "^3.10.0",
+    "method-override": "1.0.x",
+    "mongoose": "3.8.x",
+    "multiparty": "4.1.2",
+    "nodetime": "0.8.x",
+    "q": "^1.4.1",
+    "serve-favicon": "2.0.x",
+    "serve-static": "1.0.x"
+  }
+}
