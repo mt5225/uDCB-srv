@@ -55,8 +55,8 @@ server = http.createServer (req, res) ->
             POST = qs.parse(body)
             msgBody = JSON.parse(POST['param'])
             timeStr = util.getDateTime()
-            #exportFile = "/Users/mt5225/Projects/corpwebsite/dcv_en_web/exported/udbcexport_#{timeStr}.json"
-            exportFile = "/usr/share/nginx/mbts_24_Cubic/exported/udbcexport_#{timeStr}.json"
+            exportFile = "/Users/mt5225/Projects/corpwebsite/dcv_en_web/exported/udbcexport_#{timeStr}.json"
+            #exportFile = "/usr/share/nginx/mbts_24_Cubic/exported/udbcexport_#{timeStr}.json"
             console.log "export scene file to #{exportFile}"
             fs.writeFile exportFile, msgBody.content, (err) ->
               if err
