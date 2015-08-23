@@ -2,7 +2,7 @@ AWS = require 'aws-sdk'
 
 s3Client = new (AWS.S3)(
   accessKeyId: process.env.S3_KEY
-  secretAccessKey: process.env.S3_KEY)
+  secretAccessKey: process.env.S3_SEC)
 
 exports.save = (part, cb) -> 
   console.log "uploading to s3, file size #{part.byteCount}"

@@ -78,17 +78,17 @@ server = http.createServer (req, res) ->
             # You *must* act on the part by reading it
             if part.filename
               console.log "save sceen capture image to s3"
-              # s3.save part, (err, data) ->
-              #   if err
-              #     console.log err
-              #     res.writeHead 500
-              #     res.end()
-              #     return                 
-              #   console.log("done", data)
-              #   res.writeHead 200, 'Content-Type': 'application/json'
-              #   msg = {}
-              #   res.write JSON.stringify(msg)
-              #   res.end()
+              s3.save part, (err, data) ->
+                if err
+                  console.log err
+                  res.writeHead 500
+                  res.end()
+                  return                 
+                console.log("done", data)
+                res.writeHead 200, 'Content-Type': 'application/json'
+                msg = {}
+                res.write JSON.stringify(msg)
+                res.end()
           form.parse req
 
         else #else return {}
