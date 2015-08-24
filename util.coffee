@@ -23,3 +23,9 @@ exports.parseCookies = (request) ->
     return
   )
   list
+
+exports.uuid = ->
+  delim = '-'
+  S4 = ->
+    (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1)
+  return S4() + delim + S4() + delim + S4() + delim + S4()
