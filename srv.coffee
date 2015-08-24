@@ -12,6 +12,7 @@ app.route('/rest/web/model/save/string').post unity3d.save
 
 usm = require './controller/usm_controller'
 app.route('/usm/api/v1/scenes/:userid').get usm.get
+app.route('/usm/api/v1/scenes/id/:scene_id').get usm.getscene
 
 app.listen 8088, ->
   console.log "ready to serve at port 8088"

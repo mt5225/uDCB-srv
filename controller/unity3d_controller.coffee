@@ -16,11 +16,11 @@ exports.userinfo = (req, res, next) ->
   else
     res.status(500).json {state: false}
 
-#export scene to local json
+#export scene to local json file
 exports.export = (req, res, next) ->
   console.log "/rest/web/application/string/save : export scene file"
-  msgBody = JSON.parse req.params('param')
-  console.log msgBody
+  msgBody = JSON.parse req.param('param')
+  #console.log msgBody
   timeStr = util.getDateTime()
   exportFile = "/Users/mt5225/Projects/corpwebsite/dcv_en_web/exported/udbcexport_#{timeStr}.json"
   #exportFile = "/usr/share/nginx/mbts_24_Cubic/exported/udbcexport_#{timeStr}.json"
@@ -43,8 +43,8 @@ exports.save = (req, res, next) ->
     else
       console.log "Successfully upload #{req.file['path']} image to aws s3."
       ##update or create usm
-      msgBody = JSON.parse req.params('param')
-      console.log msgBody
+      msgBody = JSON.parse req.param('param')
+      #console.log msgBody
       userid = util.parseCookies(req).userid
       usm = new USM()
       usm.userid = userid

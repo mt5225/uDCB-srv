@@ -17,3 +17,11 @@ exports.get = (req, res, next) ->
         it.image = item.image
         results.push it
       res.status(200).json results
+
+exports.getscene = (req, res, next) ->
+  scene_id = req.params['scene_id']
+  USM.findOne('sceneid': scene_id).exec (err, scene) ->
+    if err
+      res.status(500).json {status: "error to fetch scenes by id  #{scene_id}"}
+    else
+      res.status(200).json scene
