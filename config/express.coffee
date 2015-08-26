@@ -10,11 +10,11 @@ module.exports = ->
   app = express()
   app.use multer(dest: './uploads/').single('file')
   app.use(morgan 'combined')
+  app.use bodyParser.json({limit: '50mb'})
   app.use(bodyParser.urlencoded(
+    limit: '50mb'
     extended: true
   ))
-  app.use bodyParser.json({limit: '50mb'})
-  app.use bodyParser.urlencoded({limit: '50mb'})
   app.use methodOverride()
   app.use cors() #enable cross-domain ajax
 
