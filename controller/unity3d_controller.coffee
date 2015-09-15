@@ -34,6 +34,11 @@ exports.export = (req, res, next) ->
 
 #save scene
 exports.save = (req, res, next) ->
+  userid = util.parseCookies(req).userid
+  if userid is 'anonymous'
+    console.log "anonymous user, donot save"
+    res.status(200).json {state: true}
+    return
   uuid = util.uuid()
   filename = "#{uuid}.jpg"
   #upload screen capture to aws s3
