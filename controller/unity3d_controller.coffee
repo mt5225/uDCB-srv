@@ -8,6 +8,8 @@ exports.userinfo = (req, res, next) ->
   if util.parseCookies(req).userid?
     userid = util.parseCookies(req).userid
     console.log "userid = #{userid}"
+    if userid is "anonymous"
+      userid = 9999
     userinfoStr = 
     """
     {"state":true,"content":{"qrsharecount":0,"idolcount":0,"username":"uDCB","joindate":"Aug 14, 2015 9:28:30 PM","source":"momoda","fanscount":0,"status":1,"email":"mt5225@outlook.com","userid":#{userid},"zuopincount":0,"companyscale":0,"usertype":"免费版","shoucangcount":0,"privatecount":0,"screencount":0},"time":"2015-08-23 12:05:55"}
