@@ -16,7 +16,7 @@ exports.userinfo = (req, res, next) ->
     """
     res.status(200).json JSON.parse(userinfoStr)
   else
-    console.log "could get userid"
+    console.log "could not get userid"
     res.status(500).json {state: false}
 
 #export scene to local json file
