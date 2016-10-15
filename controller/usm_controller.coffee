@@ -32,4 +32,4 @@ exports.deletescene = (req, res, next) ->
     if err
       res.status(500).json {status: "error to delete scenes by id  #{scene_id}"}
     else
-      res.status(200).json scene
+      res.status(200).json {status: "delete #{scene_id} success"}
